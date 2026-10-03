@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "simplecounter",
+  "version": "1.0.0",
+  "name": {
+    "fr": "Compteur simple",
+    "en": "Simple counter",
+    "es": "Contador simple",
+    "pt": "Contador simples",
+    "ru": "Простой счётчик",
+    "zh": "简单计数器",
+    "ja": "シンプルカウンター",
+    "ko": "간단한 카운터",
+    "hi": "सरल काउंटर",
+    "ar": "عدّاد بسيط"
+  },
+  "description": {
+    "fr": "Profil standard",
+    "en": "Standard profile",
+    "es": "Perfil estándar",
+    "pt": "Perfil padrão",
+    "ru": "Стандартный профиль",
+    "zh": "标准配置",
+    "ja": "標準プロファイル",
+    "ko": "기본 프로필",
+    "hi": "मानक प्रोफ़ाइल",
+    "ar": "ملف قياسي"
+  },
+  "icon": "",
+  "author": "Regis Conchon",
+  "players": {
+    "min": 2,
+    "max": 6,
+    "default": 2
+  },
+  "counters": [
+    {
+      "id": "life",
+      "name": {
+        "fr": "Points de vie",
+        "en": "Life points",
+        "es": "Puntos de vida",
+        "pt": "Pontos de vida",
+        "ru": "Очки жизни",
+        "zh": "生命值",
+        "ja": "ライフ",
+        "ko": "생명점",
+        "hi": "जीवन अंक",
+        "ar": "نقاط الحياة"
+      },
+      "icon": "heart-outline.svg",
+      "initial": 0,
+      "min": 0,
+      "max": 999,
+      "primary": true,
+      "color": "#e74c3c",
+      "step": 1,
+      "bigStep": 5
+    }
+  ],
+  "chronometer": {
+    "enabled": false,
+    "defaultSeconds": 0
+  }
+}

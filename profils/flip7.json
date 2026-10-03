@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "id": "flip7",
+  "version": "1.0.0",
+  "name": {
+    "en": "Flip 7"
+  },
+  "description": {
+    "en": "Flip 7"
+  },
+  "icon": "Flip7.png",
+  "author": "Regis Conchon",
+  "players": {
+    "min": 2,
+    "max": 8,
+    "default": 3
+  },
+  "counters": [
+    {
+      "id": "points",
+      "name": {
+        "fr": "Score",
+        "en": "Score",
+        "es": "Puntuación",
+        "pt": "Pontuação",
+        "ru": "Очки",
+        "zh": "得分",
+        "ja": "スコア",
+        "ko": "점수",
+        "hi": "स्कोर",
+        "ar": "النقاط"
+      },
+      "icon": "stats-chart-outline.svg",
+      "initial": 0,
+      "min": 0,
+      "max": 999,
+      "winAt": 200,
+      "primary": true,
+      "color": "#e74c3c",
+      "step": 1,
+      "bigStep": 10
+    }
+  ],
+  "chronometer": {
+    "enabled": false,
+    "defaultSeconds": 0
+  }
+}

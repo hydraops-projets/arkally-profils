@@ -1,0 +1,73 @@
+name: Contrôle
+
+# Contrôle chaque proposition de profil, et `main` après fusion : schéma, SVG,
+# images, catalogue à jour. Le résumé de l'exécution montre les profils et les
+# icônes apportés. Les traductions ne sont pas regardées : elles sont toutes
+# relues à la validation, par une session lancée depuis HydraOps.
+#
+# Dépôt PUBLIC : une proposition peut venir de n'importe qui, et ce job exécute
+# son code. D'où :
+# - `pull_request` et JAMAIS `pull_request_target` (qui lancerait le code de
+#   l'inconnu avec les droits d'écriture du dépôt) ;
+# - jeton en lecture seule, aucun secret ;
+# - une machine de GitHub, jetée après le job, et JAMAIS `self-hosted` : les
+#   ouvriers de l'organisation tournent sur le VPS qui porte la production.
+#   Minutes gratuites et illimitées pour un dépôt public.
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: controle-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  controle:
+    name: Contrôle
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Tout l'historique : il faut la base de la proposition pour savoir
+          # ce qu'elle change.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci --no-audit --no-fund
+
+      # Les fichiers de la proposition se lisent chez son auteur (sa copie du
+      # dépôt), à l'état exact contrôlé : c'est de là que le résumé affiche
+      # les icônes.
+      - name: Contrôler les profils
+        env:
+          DEPOT: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          VERSION: ${{ github.event.pull_request.head.sha || github.sha }}
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -n "$BASE" ] && git cat-file -e "$BASE" 2>/dev/null; then
+            git diff --name-only "$BASE...$VERSION" > "$RUNNER_TEMP/modifies.txt"
+          else
+            : > "$RUNNER_TEMP/modifies.txt"
+          fi
+          node scripts/verifier.mjs \
+            --modifies "$RUNNER_TEMP/modifies.txt" \
+            --apercu "https://raw.githubusercontent.com/$DEPOT/$VERSION" \
+            --resume "$GITHUB_STEP_SUMMARY"
+
+      # Après le contrôle, pour que son résumé s'écrive même si un test échoue.
+      - name: Tests du contrôle
+        if: ${{ !cancelled() }}
+        run: npm test

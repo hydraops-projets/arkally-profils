@@ -1,0 +1,18 @@
+{
+  "name": "arkally-profils",
+  "private": true,
+  "description": "Profils de jeu publics d'Arkally : un fichier JSON par profil, contrôlés par schéma.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "verifier": "node scripts/verifier.mjs",
+    "catalogue": "node scripts/generer-catalogue.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0"
+  }
+}

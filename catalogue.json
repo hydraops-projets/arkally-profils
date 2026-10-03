@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "profils": [
+    {
+      "id": "flip7",
+      "schema": 1,
+      "version": "1.0.0",
+      "name": {
+        "en": "Flip 7"
+      },
+      "description": {
+        "en": "Flip 7"
+      },
+      "langues": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "hi",
+        "ja",
+        "ko",
+        "pt",
+        "ru",
+        "zh"
+      ],
+      "icon": "Flip7.png",
+      "fichier": "profils/flip7.json"
+    },
+    {
+      "id": "mtg",
+      "schema": 1,
+      "version": "1.0.0",
+      "name": {
+        "en": "Magic: The Gathering"
+      },
+      "description": {
+        "fr": "Profil standard pour Magic: The Gathering",
+        "en": "Standard profile for Magic: The Gathering",
+        "es": "Perfil estándar para Magic: The Gathering",
+        "pt": "Perfil padrão para Magic: The Gathering",
+        "ru": "Стандартный профиль для Magic: The Gathering",
+        "zh": "万智牌标准配置",
+        "ja": "マジック：ザ・ギャザリングの標準プロファイル",
+        "ko": "매직: 더 개더링 기본 프로필",
+        "hi": "Magic: The Gathering के लिए मानक प्रोफ़ाइल",
+        "ar": "ملف قياسي للعبة Magic: The Gathering"
+      },
+      "langues": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "hi",
+        "ja",
+        "ko",
+        "pt",
+        "ru",
+        "zh"
+      ],
+      "icon": "MTG.png",
+      "fichier": "profils/mtg.json"
+    },
+    {
+      "id": "mtg-commander",
+      "schema": 1,
+      "version": "1.0.0",
+      "name": {
+        "en": "Magic: The Gathering — Commander"
+      },
+      "description": {
+        "fr": "Magic — format Commander (40 PV, poison, énergie, expérience)",
+        "en": "Magic — Commander format (40 life, poison, energy, experience)",
+        "es": "Magic — formato Commander (40 vidas, veneno, energía, experiencia)",
+        "pt": "Magic — formato Commander (40 de vida, veneno, energia, experiência)",
+        "ru": "Magic — формат Commander (40 жизней, яд, энергия, опыт)",
+        "zh": "万智牌 — 指挥官赛制（40 点生命、中毒、能量、经验）",
+        "ja": "マジック — 統率者戦（ライフ 40、毒、エネルギー、経験）",
+        "ko": "매직 — 커맨더 포맷 (생명 40, 독, 에너지, 경험)",
+        "hi": "Magic — Commander फ़ॉर्मेट (40 जीवन, ज़हर, ऊर्जा, अनुभव)",
+        "ar": "Magic — صيغة Commander (40 نقطة حياة، سم، طاقة، خبرة)"
+      },
+      "langues": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "hi",
+        "ja",
+        "ko",
+        "pt",
+        "ru",
+        "zh"
+      ],
+      "icon": "MTG.png",
+      "fichier": "profils/mtg-commander.json"
+    },
+    {
+      "id": "simplecounter",
+      "schema": 1,
+      "version": "1.0.0",
+      "name": {
+        "fr": "Compteur simple",
+        "en": "Simple counter",
+        "es": "Contador simple",
+        "pt": "Contador simples",
+        "ru": "Простой счётчик",
+        "zh": "简单计数器",
+        "ja": "シンプルカウンター",
+        "ko": "간단한 카운터",
+        "hi": "सरल काउंटर",
+        "ar": "عدّاد بسيط"
+      },
+      "description": {
+        "fr": "Profil standard",
+        "en": "Standard profile",
+        "es": "Perfil estándar",
+        "pt": "Perfil padrão",
+        "ru": "Стандартный профиль",
+        "zh": "标准配置",
+        "ja": "標準プロファイル",
+        "ko": "기본 프로필",
+        "hi": "मानक प्रोफ़ाइल",
+        "ar": "ملف قياسي"
+      },
+      "langues": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "hi",
+        "ja",
+        "ko",
+        "pt",
+        "ru",
+        "zh"
+      ],
+      "icon": "",
+      "fichier": "profils/simplecounter.json"
+    }
+  ]
+}
