@@ -4,16 +4,22 @@
 **public**, créé le 03/10/2026 par le lot 2 du plan `arkally-plan-01`
 (`docs/conception/plans/arkally-plan-01-profils-publics.md` du dépôt
 `mobile`). Aucune application ici : des données, leur schéma et leur contrôle.
-L'application les récupère au moment de fabriquer et de déployer (lot 3),
-jamais pendant l'usage.
+L'application les récupère au moment de fabriquer et de déployer
+(`scripts/recuperer-profils.mjs` de `mobile`, dans `assets/profils-publics/`),
+jamais pendant l'usage : **un profil fusionné ici n'arrive sur les téléphones
+qu'au déploiement suivant de l'application**, ou par « Run workflow » sur
+« Déploiement (recette) » du dépôt `arkally-mobile`. Ne recopie que
+`profils/`, `icones/`, `images/`, `schema.json` et `catalogue.json` ; un
+profil `simplecounter` ou `flip7` retiré bloque la fabrication et le
+déploiement (profils indispensables à l'application).
 
 ## Contenu
 
 - `profils/<id>.json` — un profil par fichier, nommé d'après son `id`.
 - `icones/*.svg` — icônes des compteurs (`icon` d'un compteur).
 - `images/*.png` — images des profils (`icon` du profil), 96 × 96, 32 Ko au plus.
-- `schema.json` — format 1 (JSON Schema 2020-12), **même fichier que
-  `assets/profils/schema.json` de `mobile`** tant que celui-ci existe.
+- `schema.json` — format 1 (JSON Schema 2020-12), recopié tel quel dans
+  `mobile` avec les profils.
 - `catalogue.json` — **généré** (`npm run catalogue`), jamais écrit à la main.
 - `scripts/controles.mjs` — tous les contrôles ; `verifier.mjs` (le contrôle de
   GitHub, résumé compris) et `generer-catalogue.mjs` l'appellent.
@@ -22,7 +28,7 @@ jamais pendant l'usage.
 
 - **Contrôles miroirs de l'application** : règles hors schéma (min ≤ défaut ≤
   max, identifiants de compteur uniques) = `src/data/validerProfil.ts` de
-  `mobile` ; refus des SVG = `scripts/generer-icones.mjs` de `mobile`. Une règle
+  `mobile` ; refus des SVG = `scripts/generer-profils.mjs` de `mobile`. Une règle
   changée d'un côté se reporte de l'autre, dans le même travail.
 - **Le contrôle ne regarde pas les langues** (choix d'OLG22) : à la validation,
   une session lancée depuis HydraOps relit **toutes** les traductions, y

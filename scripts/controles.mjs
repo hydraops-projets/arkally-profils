@@ -3,7 +3,7 @@
 //
 // Le schéma (`schema.json`) est vérifié par Ajv ; ce qui suit est ce qu'un
 // schéma ne sait pas dire, plus les fichiers qui accompagnent un profil.
-// Miroir de `src/data/validerProfil.ts` et `scripts/generer-icones.mjs` du
+// Miroir de `src/data/validerProfil.ts` et `scripts/generer-profils.mjs` du
 // dépôt `mobile` : une règle changée ici se reporte là-bas.
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
