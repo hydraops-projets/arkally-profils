@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Profil de jeu Arkally",
+  "description": "Format 1 d'un profil de jeu. Les règles qu'un schéma ne sait pas dire (min ≤ défaut ≤ max, identifiants de compteur uniques) sont tenues par scripts/controles.mjs de ce dépôt et par src/data/validerProfil.ts de l'application.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "id", "version", "name", "icon", "players", "counters"],
+  "properties": {
+    "schema": {
+      "description": "Version du format. Une application qui ne la connaît pas écarte le profil.",
+      "const": 1
+    },
+    "id": { "$ref": "#/$defs/identifiant" },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "name": { "$ref": "#/$defs/texteTraduit" },
+    "description": { "$ref": "#/$defs/texteTraduit" },
+    "icon": {
+      "description": "Image PNG du profil, nom d'un fichier de images/ (96 × 96 pixels), vide pour une pastille à l'initiale.",
+      "type": "string",
+      "pattern": "^(|[A-Za-z0-9][A-Za-z0-9_-]{0,63}\\.png)$"
+    },
+    "author": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "players": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max", "default"],
+      "properties": {
+        "min": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "max": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "default": { "type": "integer", "minimum": 1, "maximum": 20 }
+      }
+    },
+    "counters": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/compteur" },
+      "contains": {
+        "type": "object",
+        "required": ["primary"],
+        "properties": { "primary": { "const": true } }
+      },
+      "minContains": 1,
+      "maxContains": 1
+    },
+    "chronometer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "defaultSeconds"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "defaultSeconds": { "type": "integer", "minimum": 0, "maximum": 86400 },
+        "parTour": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "identifiant": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "texteTraduit": {
+      "description": "Texte par langue (code ISO 639-1 : fr, en…). Langue absente : l'anglais, sinon la première fournie.",
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[a-z]{2}$" },
+      "additionalProperties": { "type": "string", "minLength": 1, "maxLength": 120 }
+    },
+    "entier": { "type": "integer", "minimum": -1000000, "maximum": 1000000 },
+    "compteur": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "initial"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifiant" },
+        "name": { "$ref": "#/$defs/texteTraduit" },
+        "icon": {
+          "description": "Icône SVG du compteur, nom d'un fichier de icones/.",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}\\.svg$"
+        },
+        "initial": { "$ref": "#/$defs/entier" },
+        "min": { "$ref": "#/$defs/entier" },
+        "max": { "$ref": "#/$defs/entier" },
+        "primary": { "type": "boolean" },
+        "loseAt": { "$ref": "#/$defs/entier" },
+        "winAt": { "$ref": "#/$defs/entier" },
+        "perOpponent": { "type": "boolean" },
+        "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "step": { "type": "integer", "minimum": 1, "maximum": 1000 },
+        "bigStep": { "type": "integer", "minimum": 1, "maximum": 10000 }
+      },
+      "if": {
+        "required": ["primary"],
+        "properties": { "primary": { "const": true } }
+      },
+      "then": { "required": ["bigStep"] },
+      "else": { "not": { "required": ["bigStep"] } }
+    }
+  }
+}

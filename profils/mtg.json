@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "id": "mtg",
+  "version": "1.0.0",
+  "name": {
+    "en": "Magic: The Gathering"
+  },
+  "description": {
+    "fr": "Profil standard pour Magic: The Gathering",
+    "en": "Standard profile for Magic: The Gathering",
+    "es": "Perfil estándar para Magic: The Gathering",
+    "pt": "Perfil padrão para Magic: The Gathering",
+    "ru": "Стандартный профиль для Magic: The Gathering",
+    "zh": "万智牌标准配置",
+    "ja": "マジック：ザ・ギャザリングの標準プロファイル",
+    "ko": "매직: 더 개더링 기본 프로필",
+    "hi": "Magic: The Gathering के लिए मानक प्रोफ़ाइल",
+    "ar": "ملف قياسي للعبة Magic: The Gathering"
+  },
+  "icon": "MTG.png",
+  "author": "Regis Conchon",
+  "players": {
+    "min": 2,
+    "max": 6,
+    "default": 2
+  },
+  "counters": [
+    {
+      "id": "life",
+      "name": {
+        "fr": "Points de vie",
+        "en": "Life points",
+        "es": "Puntos de vida",
+        "pt": "Pontos de vida",
+        "ru": "Очки жизни",
+        "zh": "生命值",
+        "ja": "ライフ",
+        "ko": "생명점",
+        "hi": "जीवन अंक",
+        "ar": "نقاط الحياة"
+      },
+      "icon": "heart-outline.svg",
+      "initial": 20,
+      "min": 0,
+      "max": 999,
+      "loseAt": 0,
+      "primary": true,
+      "color": "#e74c3c",
+      "step": 1,
+      "bigStep": 5
+    },
+    {
+      "id": "poison",
+      "name": {
+        "fr": "Poison",
+        "en": "Poison",
+        "es": "Veneno",
+        "pt": "Veneno",
+        "ru": "Яд",
+        "zh": "中毒",
+        "ja": "毒",
+        "ko": "독",
+        "hi": "ज़हर",
+        "ar": "السم"
+      },
+      "icon": "skull-outline.svg",
+      "initial": 0,
+      "min": 0,
+      "max": 10,
+      "loseAt": 10,
+      "color": "#27ae60",
+      "step": 1
+    },
+    {
+      "id": "energy",
+      "name": {
+        "fr": "Énergie",
+        "en": "Energy",
+        "es": "Energía",
+        "pt": "Energia",
+        "ru": "Энергия",
+        "zh": "能量",
+        "ja": "エネルギー",
+        "ko": "에너지",
+        "hi": "ऊर्जा",
+        "ar": "الطاقة"
+      },
+      "icon": "flash-outline.svg",
+      "initial": 0,
+      "min": 0,
+      "max": 999,
+      "color": "#f39c12",
+      "step": 1
+    },
+    {
+      "id": "experience",
+      "name": {
+        "fr": "Expérience",
+        "en": "Experience",
+        "es": "Experiencia",
+        "pt": "Experiência",
+        "ru": "Опыт",
+        "zh": "经验",
+        "ja": "経験",
+        "ko": "경험",
+        "hi": "अनुभव",
+        "ar": "الخبرة"
+      },
+      "icon": "MTG-planeswalker.svg",
+      "initial": 0,
+      "min": 0,
+      "max": 999,
+      "color": "#f39c12",
+      "step": 1
+    }
+  ],
+  "chronometer": {
+    "enabled": false,
+    "defaultSeconds": 0
+  }
+}
