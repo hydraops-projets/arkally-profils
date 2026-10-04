@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "simplecounter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "fr": "Compteur simple",
     "en": "Simple counter",
@@ -30,7 +30,7 @@
   "author": "Regis Conchon",
   "players": {
     "min": 2,
-    "max": 6,
+    "max": 10,
     "default": 2
   },
   "counters": [

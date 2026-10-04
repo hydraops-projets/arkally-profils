@@ -4,7 +4,7 @@
     {
       "id": "flip7",
       "schema": 1,
-      "version": "1.0.0",
+      "version": "1.1.0",
       "name": {
         "en": "Flip 7"
       },
@@ -97,7 +97,7 @@
     {
       "id": "simplecounter",
       "schema": 1,
-      "version": "1.0.0",
+      "version": "1.1.0",
       "name": {
         "fr": "Compteur simple",
         "en": "Simple counter",
