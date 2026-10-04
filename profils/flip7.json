@@ -44,5 +44,6 @@
   "chronometer": {
     "enabled": false,
     "defaultSeconds": 0
-  }
+  },
+  "ranking": true
 }
