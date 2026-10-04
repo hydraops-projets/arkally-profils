@@ -46,6 +46,10 @@
       "minContains": 1,
       "maxContains": 1
     },
+    "ranking": {
+      "description": "Pastille de position à gauche du nom de chaque joueur, d'après la valeur de son compteur principal, la plus haute en tête. Absent : false.",
+      "type": "boolean"
+    },
     "chronometer": {
       "type": "object",
       "additionalProperties": false,

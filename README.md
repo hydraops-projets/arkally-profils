@@ -33,6 +33,9 @@ complétées à la validation : un profil dans une seule langue est accepté.
   valeur ; `winAt` propose la victoire.
 - `players` : `min`, `max` et `default` (l'application affiche six joueurs au
   plus).
+- `ranking` : `true` affiche, à gauche du nom de chaque joueur, sa position
+  d'après le compteur principal (valeur la plus haute en tête, égalité =
+  même position). Absent : pas de pastille.
 
 ## Icônes et images
 
