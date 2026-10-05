@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "id": "star-realms",
+  "version": "1.0.0",
+  "name": {
+    "en": "Star Realms"
+  },
+  "description": {
+    "fr": "Jeu de deck-building de combat spatial",
+    "en": "Space combat deck-building game",
+    "es": "Juego de construcción de mazos de combate espacial",
+    "pt": "Jogo de construção de baralho de combate espacial",
+    "ru": "Колодостроительная игра о космических сражениях",
+    "zh": "太空战斗卡组构筑游戏",
+    "ja": "宇宙戦闘デッキ構築ゲーム",
+    "ko": "우주 전투 덱 빌딩 게임",
+    "hi": "अंतरिक्ष युद्ध डेक-बिल्डिंग खेल",
+    "ar": "لعبة بناء مجموعات أوراق عن المعارك الفضائية"
+  },
+  "icon": "StarRealms.png",
+  "players": {
+    "min": 2,
+    "max": 6,
+    "default": 2
+  },
+  "counters": [
+    {
+      "id": "authority",
+      "name": {
+        "fr": "Autorité",
+        "en": "Authority",
+        "es": "Autoridad",
+        "pt": "Autoridade",
+        "ru": "Влияние",
+        "zh": "权威",
+        "ja": "影響力",
+        "ko": "권위",
+        "hi": "अधिकार",
+        "ar": "السلطة"
+      },
+      "icon": "target-heart.svg",
+      "initial": 50,
+      "min": 0,
+      "max": 999,
+      "loseAt": 0,
+      "primary": true,
+      "color": "#27ae60",
+      "step": 1,
+      "bigStep": 5
+    },
+    {
+      "id": "combat",
+      "name": {
+        "fr": "Combat",
+        "en": "Combat",
+        "es": "Combate",
+        "pt": "Combate",
+        "ru": "Атака",
+        "zh": "战斗",
+        "ja": "戦闘力",
+        "ko": "전투",
+        "hi": "युद्ध",
+        "ar": "القتال"
+      },
+      "icon": "target-cross.svg",
+      "initial": 0,
+      "min": 0,
+      "max": 999,
+      "color": "#e74c3c",
+      "step": 1
+    },
+    {
+      "id": "trade",
+      "name": {
+        "fr": "Commerce",
+        "en": "Trade",
+        "es": "Comercio",
+        "pt": "Comércio",
+        "ru": "Торговля",
+        "zh": "贸易",
+        "ja": "交易力",
+        "ko": "무역",
+        "hi": "व्यापार",
+        "ar": "التجارة"
+      },
+      "icon": "target-circle.svg",
+      "initial": 0,
+      "min": 0,
+      "max": 999,
+      "color": "#f1c40f",
+      "step": 1
+    }
+  ],
+  "chronometer": {
+    "enabled": false,
+    "defaultSeconds": 0
+  }
+}

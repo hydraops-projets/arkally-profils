@@ -136,6 +136,40 @@
       ],
       "icon": "",
       "fichier": "profils/simplecounter.json"
+    },
+    {
+      "id": "star-realms",
+      "schema": 1,
+      "version": "1.0.0",
+      "name": {
+        "en": "Star Realms"
+      },
+      "description": {
+        "fr": "Jeu de deck-building de combat spatial",
+        "en": "Space combat deck-building game",
+        "es": "Juego de construcción de mazos de combate espacial",
+        "pt": "Jogo de construção de baralho de combate espacial",
+        "ru": "Колодостроительная игра о космических сражениях",
+        "zh": "太空战斗卡组构筑游戏",
+        "ja": "宇宙戦闘デッキ構築ゲーム",
+        "ko": "우주 전투 덱 빌딩 게임",
+        "hi": "अंतरिक्ष युद्ध डेक-बिल्डिंग खेल",
+        "ar": "لعبة بناء مجموعات أوراق عن المعارك الفضائية"
+      },
+      "langues": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "hi",
+        "ja",
+        "ko",
+        "pt",
+        "ru",
+        "zh"
+      ],
+      "icon": "StarRealms.png",
+      "fichier": "profils/star-realms.json"
     }
   ]
 }
