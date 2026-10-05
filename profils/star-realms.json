@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "star-realms",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": {
     "en": "Star Realms"
   },
@@ -38,7 +38,7 @@
         "hi": "अधिकार",
         "ar": "السلطة"
       },
-      "icon": "target-heart.svg",
+      "icon": "target-circle.svg",
       "initial": 50,
       "min": 0,
       "max": 999,
@@ -47,48 +47,6 @@
       "color": "#27ae60",
       "step": 1,
       "bigStep": 5
-    },
-    {
-      "id": "combat",
-      "name": {
-        "fr": "Combat",
-        "en": "Combat",
-        "es": "Combate",
-        "pt": "Combate",
-        "ru": "Атака",
-        "zh": "战斗",
-        "ja": "戦闘力",
-        "ko": "전투",
-        "hi": "युद्ध",
-        "ar": "القتال"
-      },
-      "icon": "target-cross.svg",
-      "initial": 0,
-      "min": 0,
-      "max": 999,
-      "color": "#e74c3c",
-      "step": 1
-    },
-    {
-      "id": "trade",
-      "name": {
-        "fr": "Commerce",
-        "en": "Trade",
-        "es": "Comercio",
-        "pt": "Comércio",
-        "ru": "Торговля",
-        "zh": "贸易",
-        "ja": "交易力",
-        "ko": "무역",
-        "hi": "व्यापार",
-        "ar": "التجارة"
-      },
-      "icon": "target-circle.svg",
-      "initial": 0,
-      "min": 0,
-      "max": 999,
-      "color": "#f1c40f",
-      "step": 1
     }
   ],
   "chronometer": {
