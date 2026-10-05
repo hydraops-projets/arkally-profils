@@ -64,6 +64,8 @@ npm test
 - `heart-outline`, `flash-outline`, `skull-outline`, `stats-chart-outline` :
   [Ionicons](https://ionic.io/ionicons) 7.4.0, © Ionic, licence MIT.
 - `MTG-commander`, `MTG-planeswalker` : symboles de Magic: The Gathering.
+- `target-heart`, `target-cross`, `target-circle` : dessinées pour Arkally,
+  licence MIT du dépôt.
 
 ---
 
